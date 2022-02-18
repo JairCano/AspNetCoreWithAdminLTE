@@ -1,0 +1,282 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .campo {
+        width: 350px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .margins {
+        margin-left: 10px;
+        
+    }
+
+    .margin2{
+        margin-left: 60px;
+    }
+
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+
+    .campofecha{
+        width: 853px;
+    }
+</style>
+
+<div class="margins container">
+    <div class="panel-primary">
+        <h1>Tableros de Producción</h1>
+        <br />
+        <div class="telas panel-heading">
+            <div class="margin2">
+                <br /><br />
+                <h2>Tablero Individual</h2>
+                <br />
+                <br />
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label">Fecha de Registro</label>
+                            <input type="date" class="campofecha form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label">Jornada</label>
+
+                            <div class="col-md-8">
+                                <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Empleado</label>
+
+                            <select class="campo form-control" name="Color">
+                                <option>Jason</option>
+                                <option>Marina</option>
+                                <option>Josefina</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Operaciones</label>
+                            <select class="campo form-control" name="Proveedor">
+                                <option>Coser Manga</option>
+                                <option>Coser Marquilla</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Producción</label>
+                            <select class="campo form-control" name="Proveedor">
+                                <option>Producción 5</option>
+                                <option>Producción 6</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <br />
+
+                    <div class="row">
+                        <div class="col-sm-offset-5 col-sm-2 text-center">
+                            <div class="btn-group" data-toggle="buttons">
+                                <button type="button" id="btn_enviar" class="BotonR btn">Registrar producción ind.</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <h3>Tabla Individual</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>FechaRegistro</td>
+                <td>Jornada</td>
+                <td>Empleados</td>
+                <td>Operaciones</td>
+                <td>Producción</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>12/03/2021</td>
+                <td>8</td>
+                <td>Josefina</td>
+                <td>Coser tela</td>
+                <td>Producción 5</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>11/03/2021</td>
+                <td>8</td>
+                <td>Juan</td>
+                <td>Coser Marquilla</td>
+                <td>Producción 6</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+    <hr />
+    <br />
+
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Tablero grupal</h2>
+            <br />
+            <br />
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="control-label">Fecha de Registro</label>
+                        <input type="date" class="campofecha form-control" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="ejemplo_email_3" class="col-md-4 control-label">Jornada</label>
+
+                        <div class="col-md-8">
+                            <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Meta del día</label>
+
+                        <div class="col-md-8">
+                            <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Producción Real</label>
+                        <div class="col-md-8">
+                            <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Producción</label>
+                        <select class="campo form-control" name="Proveedor">
+                            <option>Producción 5</option>
+                            <option>Producción 6</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-offset-5 col-sm-2 text-center">
+                        <div class="btn-group" data-toggle="buttons">
+                            <button type="button" id="btn_enviar" class="BotonR btn">Registrar producción grupal</button>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <br />
+    <h3>Tablero Grupal</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Fecha Ingreso</td>
+                <td>Jornada</td>
+                <td>Meta dia</td>
+                <td>Producción Real</td>
+                <td>Producción</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>11/03/2021</td>
+                <td>8</td>
+                <td>200</td>
+                <td>180</td>
+                <td>Producción 5</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>12/03/2021</td>
+                <td>8</td>
+                <td>200</td>
+                <td>203</td>
+                <td>Producción 6</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

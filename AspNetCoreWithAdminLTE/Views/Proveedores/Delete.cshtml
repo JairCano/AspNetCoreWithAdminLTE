@@ -1,0 +1,73 @@
+﻿@model AspNetCoreWithAdminLTE.Models.Proveedores
+@{
+    ViewData["Title"] = "Eliminar Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .inputs {
+        width: 600px;
+    }
+
+    .contenedor {
+        width: 700px;
+        height: 100%;
+        background-color: #ffff;
+        border-radius: 15px;
+    }
+
+    .contenedor2 {
+        margin-left: 30px;
+    }
+
+    h3 {
+        margin-left: 50px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="contenedor container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Eliminar Proveedor</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="contenedor2 col-sm-10">
+            <form method="post" asp-action="DeleteProveedores">
+
+                <input type="hidden" asp-for="id" />
+
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input type="text" asp-for="Nombre" class="form-control" disabled />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input type="email" asp-for="Email" class="form-control" disabled />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input type="text" asp-for="Telefono" class="form-control" disabled />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="inputs form-group">
+                    <input type="submit" value="Eliminar Proveedor" class="btn btn-primary" />
+                </div>
+                <br /><br />
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{<partial name="_ValidationScriptsPartial" />}
+}

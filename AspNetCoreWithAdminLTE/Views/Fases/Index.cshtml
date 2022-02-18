@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .campo {
+        width: 350px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+
+    .margins{
+      margin-left: 10px;
+    }
+
+    .margin2 {
+        margin-left: 70px;
+    }
+</style>
+
+<div class="margins container">
+    <div class="panel-primary">
+        <h1>Fases</h1>
+        <br />
+        <div class="telas panel-heading">
+            <div class="margin2">
+                <br /><br />
+                <h2>Subfases</h2>
+                <br />
+                <br />
+                <div class="panel-body">
+                    <form id="form" class="form-horizontal" role="form">
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Nombre</label>
+
+                                <div class="col-md-8">
+                                    <input class="form-control" name="text_nom1" id="text_nom1" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-4 control-label">Descripcion</label>
+
+                                <div class="col-md-8">
+                                    <textarea type="text" class="campoobservaciones form-control" id="ejemplo_password_3" name="text_dep" id="text_dep"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Operaciones</label>
+                                <select class="campo form-control" name="Operaciones">
+                                    <option>Coser cuello</option>
+                                    <option>Pegar marquilla</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Fases</label>
+
+                                <select class="campo form-control" name="Color">
+                                    <option>Cosido</option>
+                                    <option>Lavado</option>
+                                    <option>Terminacion</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-offset-5 col-sm-2 text-center">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <button type="button" id="btn_enviar" class="BotonR btn">Registrar Subfases</button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <h3>Tabla Subfases</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+                <td>Operacion</td>
+                <td>Fase</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Coser</td>
+                <td>Coser tela</td>
+                <td>coser marquilla</td>
+                <td>Coser tela</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pegar</td>
+                <td>Pegar tela</td>
+                <td>Pegar marquilla </td>
+                <td>Pegar tela</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Fases</h2>
+            <br />
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Nombre</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Descripcion</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <textarea type="text" class="campoobservaciones form-control" id="ejemplo_password_3" name="text_dep" id="text_dep"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    
+                    <div class="row">
+                        <div class="col-sm-offset-5 col-sm-2 text-center">
+                            <div class="btn-group" data-toggle="buttons">
+                                <button type="button" id="btn_enviar" class="BotonR btn">Registrar Fases</button>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <br />
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+    <br /> <br />
+    <h3>Tabla Fases</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Descripcion</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Coser</td>
+                <td>Se cose las camisas</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lavado</td>
+                <td>Se manda a lavar las camisas</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .campo {
+        width: 350px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+
+    .margins {
+        margin-left: 10px;
+    }
+
+    .margin2 {
+        margin-left: 70px;
+    }
+</style>
+
+<div class="margins container">
+    <div class="panel-primary">
+        <h1>Prendas terminadas</h1>
+        <br />
+        <div class="telas panel-heading">
+            <div class="margin2">
+                <br /><br />
+                <h2>Mostrar prendas terminadas</h2>
+                <br />
+                <br />
+                <div class="panel-body">
+                    <form id="form" class="form-horizontal" role="form">
+
+                       <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Seleccionar producción:</label>
+
+                                <select class="campo form-control" name="Color">
+                                    <option>Producción 1</option>
+                                    <option>Producción 2</option>
+                                    <option>Producción 3</option>
+                                    <option>Producción 4</option>
+                                    <option>Producción 5</option>
+                                    <option>Producción 6</option>
+                                    <option>Producción 7</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-sm-offset-5 col-sm-2 text-center">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <button type="button" id="btn_enviar" class="BotonR btn">Mostrar prendas terminadas</button>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>

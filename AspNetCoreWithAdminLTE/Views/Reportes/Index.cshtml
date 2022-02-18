@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .campo {
+        width: 350px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+    }
+
+    .margins {
+        margin-left: 10px;
+        border-radius: 15px;
+    }
+
+    .margin2 {
+        margin-left: 30px;
+        
+    }
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+    .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+    }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+</style>
+
+<div class="margins container">
+    <h1>Reportes</h1>
+    <br />
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Produccion</label>
+                            <select class="campo form-control" name="Empleado">
+                                <option>Produccion 1</option>
+                                <option>Produccion 2</option>
+                                <option>Produccion 3</option>
+                                <option>Produccion 4</option>
+                                <option>Produccion 5</option>
+                                <option>Produccion 6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div class="btn-group" data-toggle="buttons">
+                                <button type="button" id="btn_enviar" class="BotonR btn">Generar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+

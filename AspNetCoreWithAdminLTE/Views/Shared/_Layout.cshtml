@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CreacionesPajov</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <!-- Font Awesome Icons -->
+    <link rel="icon"
+          type="image/png"
+         sizes="16x16"
+          href="~/adminlte/assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    
+    <link href="~/adminlte/assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/adminlte/dist/css/style.min.css" rel="stylesheet" />
+    <!-- Data table Jquery-->
+    <link href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
+    @RenderSection("Styles", required: false)
+
+    <style>
+        .perfil {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 20px
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="main-wrapper"
+         data-layout="vertical"
+         data-navbarbg="skin5"
+         data-sidebartype="full"
+         data-sidebar-position="absolute"
+         data-header-position="absolute"
+         data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon ps-2">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img  src="~/adminlte/assets/images/logo-icon.png"
+                                 alt="homepage"
+                                 class="light-logo"
+                                 width="35" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none"
+                       href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse"
+                     id="navbarSupportedContent"
+                     data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link sidebartoggler waves-effect waves-light"
+                               href="javascript:void(0)"
+                               data-sidebartype="mini-sidebar">
+                                <i class="mdi mdi-menu font-24"></i>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark"
+                               href="javascript:void(0)">
+                                <i class="mdi mdi-magnify fs-4"></i>
+                            </a>
+                            <form class="app-search position-absolute">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Search &amp; enter" />
+                                <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-end">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark"
+                               href="#"
+                               id="2"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+
+                            </a>
+                            <ul class="
+                    dropdown-menu dropdown-menu-end
+                    mailbox
+                    animated
+                    bounceInDown
+                  "
+                                aria-labelledby="2">
+                            </ul>
+                        </li>
+                         @*============================================================== 
+                         End Messages 
+                         ============================================================== 
+                         ============================================================== 
+                         User profile and search 
+                         ==============================================================*@ 
+                        <li class="nav-item dropdown">
+                  <a class="
+          nav-link
+          dropdown-toggle
+          text-muted
+          waves-effect waves-dark
+          pro-pic
+        "
+                     id="navbarDropdown"
+                     role="button"
+                     data-bs-toggle="dropdown"
+                     aria-expanded="false">
+                      <img src="~/adminlte/assets/images/users/1.jpg"
+                           alt="user"
+                           class="rounded-circle"
+                           width="31" />
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end user-dd animated"
+                      aria-labelledby="navbarDropdown">
+                      <a asp-controller="Administrador" asp-action="Perfil" class="dropdown-item" ><i class="mdi mdi-account me-1 ms-1"></i> Mi Perfil</a>
+                      <a asp-controller="Administrador" asp-action="Login"class="dropdown-item" ><i class="fa fa-power-off me-1 ms-1"></i> Cerrar Sesion</a>
+                      <div class="dropdown-divider"></div>
+                      
+                  </ul>
+              </li>
+            
+                                <!-- ============================================================== -->
+                                <!-- User profile and search -->
+                                <!-- ============================================================== -->
+                            </ul>
+</div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
+                        <li class="sidebar-item">
+                            <a
+                     asp-controller="Administrador" asp-action="Perfil" class="sidebar-link waves-effect waves-dark sidebar-link"
+                               aria-expanded="false">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="perfil mdi mdi-account-multiple"> Esteban T.
+                                
+                            </a>
+                           
+                            
+                        </li>
+                        <hr />
+                        <li class="sidebar-item">
+                            <a asp-controller="Home" asp-action="Index" class="sidebar-link waves-effect waves-dark sidebar-link"
+                               aria-expanded="false">
+                                <i class="mdi mdi-home"></i><span class="hide-menu">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a asp-controller="Empleados" asp-action="Index" class="sidebar-link waves-effect waves-dark sidebar-link"
+                               aria-expanded="false">
+                                <i class="mdi mdi-account-multiple"></i><span class="hide-menu">Empleados</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a asp-controller="Proveedores" asp-action="Index" class="sidebar-link waves-effect waves-dark sidebar-link"
+                               aria-expanded="false">
+                                <i class="mdi mdi-account-star"></i><span class="hide-menu">Proveedores</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                asp-controller="InicioProduccion" asp-action="Index"
+                               aria-expanded="false">
+                                <i class="mdi mdi-cube-send"></i><span class="hide-menu">Produccion</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="InicioProduccion" class="sidebar-link">
+                                        <i class="mdi mdi-rotate-right-variant"></i><span class="hide-menu">Produccion </span>
+                                    </a>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="Fases" class="sidebar-link">
+                                        <i class="mdi mdi-rotate-right-variant"></i><span class="hide-menu"> Fases De Produccion </span>
+                                    </a>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="Operaciones" class="sidebar-link">
+                                        <i class="mdi mdi-wallet-travel"></i><span class="hide-menu"> Operaciones </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="EntradaLote" class="sidebar-link">
+                                        <i class="mdi mdi-truck-delivery"></i><span class="hide-menu"> Entrada De Lote </span>
+                                    </a>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="TablerosProduccion" class="sidebar-link">
+                                        <i class="mdi mdi-table-large"></i><span class="hide-menu"> Tableros De Produccion </span>
+                                    </a>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="PrendasTerminadas" class="sidebar-link">
+                                        <i class="mdi mdi-tshirt-v"></i><span class="hide-menu"> Prendas Terminadas </span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="RemisionLote" class="sidebar-link">
+                                        <i class="mdi mdi-note-plus"></i><span class="hide-menu"> Remision Lote </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow waves-effect waves-dark"
+                               href="javascript:void(0)"
+                               aria-expanded="false">
+                                <i class="mdi mdi-tooltip-text"></i><span class="hide-menu">Novedades </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="NovedadesProduccion" class="sidebar-link">
+                                        <i class="mdi mdi-package-variant"></i><span class="hide-menu"> Novedades</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a asp-action="Index" asp-controller="NovedadesEmpleado" class="sidebar-link">
+                                        <i class="mdi mdi-account-multiple"></i><span class="hide-menu"> Tipos de Novedades</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a asp-action="Index" asp-controller="Reportes" class="sidebar-link waves-effect waves-dark sidebar-link">
+                                <i class="mdi mdi-comment-alert"></i><span class="hide-menu">Reportes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+
+
+                @RenderBody()
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Sales chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Sales chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Recent comment and chats -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Recent comment and chats -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                Creaciones Pajov
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+
+
+
+
+
+
+
+
+    <script src="~/adminlte/assets/libs/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/adminlte/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/adminlte/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/adminlte/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="~/adminlte/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/adminlte/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/adminlte/dist/js/custom.min.js"></script>
+    <!--DataTables-->
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="~/adminlte/assets/libs/flot/excanvas.js"></script>
+    <script src="~/adminlte/assets/libs/flot/jquery.flot.js"></script>
+    <script src="~/adminlte/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/adminlte/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/adminlte/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/adminlte/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="~/adminlte/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/adminlte/dist/js/pages/chart/chart-page-init.js"></script>
+    
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

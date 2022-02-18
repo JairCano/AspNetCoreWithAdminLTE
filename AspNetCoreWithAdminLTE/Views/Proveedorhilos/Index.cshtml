@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewData["Title"] = "Lista De Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //TODO: 8. Creamos La vista
+}
+
+<style>
+
+    .campo {
+        width: 350px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .margins {
+        margin-left: 10px;
+    }
+
+    .margin2 {
+        margin-left: 70px;
+    }
+
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+</style>
+
+<div class="margins container">
+    <h1>Proveedores</h1>
+    <br />
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Proveedores de Hilos</h2>
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Nombre</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="ejemplo_password_3" name="text_dep" id="text_dep">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Teléfono</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Dirección</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Fecha de llegada</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label">NIT</label>
+
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="ejemplo_password_3" name="text_dep" id="text_dep">
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-sm-offset-5 col-sm-2 text-center">
+                            <div class="btn-group" data-toggle="buttons">
+                                <button type="button" id="btn_enviar" class="BotonR btn">Registrar proveedor</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <br /><br />
+    <h3>Tabla Subfases</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Teléfono</td>
+                <td>Dirección</td>
+                <td>Fecha Llegada</td>
+                <td>NIT</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Hilandia</td>
+                <td>hilandia@gmail.com</td>
+                <td>4345643</td>
+                <td>cll 6 sur #70-150</td>
+                <td>01/01/2022</td>
+                <td>43345357</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Hilocos</td>
+                <td>hilocos@gmail.com</td>
+                <td>4345643</td>
+                <td>cll 6 sur #77-150</td>
+                <td>01/02/2022</td>
+                <td>77774357</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

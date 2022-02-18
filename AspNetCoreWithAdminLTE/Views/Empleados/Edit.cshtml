@@ -1,0 +1,124 @@
+﻿@model AspNetCoreWithAdminLTE.Models.Empleados
+@{
+    ViewData["Title"] = "Editar Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .inputs {
+        width: 600px;
+    }
+
+    .contenedor {
+        width: 700px;
+        height: 100%;
+        background-color: #ffff;
+        border-radius: 15px;
+    }
+
+    .contenedor2 {
+        margin-left: 30px;
+    }
+
+    h3 {
+        margin-left: 50px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+</style>
+<body style="background-color: #eee;">
+    <br><br>
+    <div class="container contenedor border">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Editar Empleado</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-10 contenedor2">
+                <form method="post" asp-action="Edit">
+
+                    <input type="hidden" asp-for="id" />
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="inputs form-group">
+                        <label asp-for="Documento" class="control-label">Documento:</label>
+                        <input type="text" asp-for="Documento" class="form-control" />
+                        <span asp-validation-for="Documento" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Nombre" class="control-label">Nombre:</label>
+                        <input type="text" asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Apellido" class="control-label">Apellido:</label>
+                        <input type="text" asp-for="Apellido" class="form-control" />
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Edad" class="control-label">Edad:</label>
+                        <input type="text" asp-for="Edad" class="form-control" />
+                        <span asp-validation-for="Edad" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Email" class="control-label">Email:</label>
+                        <input type="email" asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Telefono" class="control-label">Teléfono:</label>
+                        <input type="text" asp-for="Telefono" class="form-control" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Cargo" class="control-label">Cargo:</label>
+                        <input type="text" asp-for="Cargo" class="form-control" />
+                        <span asp-validation-for="Cargo" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Fecha" class="control-label">Fecha:</label>
+                        <input type="date" asp-for="Fecha" class="form-control" />
+                        <span asp-validation-for="Fecha" class="text-danger"></span>
+                    </div>
+                    <br>
+
+                    <div class="inputs form-group">
+                        <label asp-for="Estado" class="control-label">Estado:</label>
+                        <input type="text" asp-for="Estado" class="form-control" />
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <br><br>
+                    <div class="inputs form-group">
+                        <input type="submit" value="Editar Empleado" class="btn btn-primary" />
+                        <input type="submit" value="Volver" class="btn btn-outline-primary" />
+                        <br><br><br><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />}
+}
+
+

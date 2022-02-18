@@ -1,0 +1,104 @@
+﻿@{ Layout = null; }
+<style>
+    .gradient-custom-2 {
+        /* fallback for old browsers */
+        background: blue;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: blue;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: blue;
+    }
+
+    @@media (min-width: 768px) {
+        .gradient-form {
+            height: 100vh !important;
+        }
+    }
+
+    @@media (min-width: 769px) {
+        .gradient-custom-2 {
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+        }
+    }
+
+    .right {
+        background: #000000;
+        
+    }
+</style>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>Login</title>
+</head>
+<body style="background-color: #eeeeee">
+
+
+
+    <section>
+        <div    class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+
+                                    <div class="text-center">
+                                        <img src="~/adminlte/assets/images/pajov.jpeg" style="width: 185px;" alt="">
+                                        <h4 class="mt-1 mb-5 pb-1">Creaciones PAJOV</h4>
+                                    </div>
+
+                                    <form>
+                                     
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="form2Example11" class="form-control" placeholder="example@gmail.com" />
+                                            <label class="form-label" for="form2Example11">Correo</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="form2Example22" class="form-control" />
+                                            <label class="form-label" for="form2Example22">Contraseña</label>
+                                        </div>
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <a asp-controller="Home"  asp-action="Index" style ="color:white"class="btn btn-dark btn-block fa-lg gradient-custom-2 mb-3">Ingresar</a>
+                                            <a class="text-muted">¿Olvidaste tu contraseña?</a>
+                                        </div>
+
+                                     
+
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="right col-lg-6 d-flex align-items-center">
+
+
+
+                                <img style="height:800px" src="~/adminlte/assets/images/users/sara.png" />
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br /><br /><br />
+    </section>
+
+
+</body>
+
+</html>
+
+

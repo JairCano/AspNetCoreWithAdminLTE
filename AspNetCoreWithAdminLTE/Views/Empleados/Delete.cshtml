@@ -1,0 +1,88 @@
+﻿@model AspNetCoreWithAdminLTE.Models.Empleados
+@{
+    ViewData["Title"] = "Eliminar Empleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Eliminar Empleado</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" asp-action="DeleteEmpleados">
+
+                <input type="hidden" asp-for="id" />
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Documento" class="control-label"></label>
+                    <input type="text" asp-for="Documento" class="form-control" disabled/>
+                    <span asp-validation-for="Documento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input type="text" asp-for="Nombre" class="form-control" disabled/>
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Apellido" class="control-label"></label>
+                    <input type="text" asp-for="Apellido" class="form-control" disabled/>
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Edad" class="control-label"></label>
+                    <input type="text" asp-for="Edad" class="form-control" disabled/>
+                    <span asp-validation-for="Edad" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input type="email" asp-for="Email" class="form-control" disabled/>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input type="text" asp-for="Telefono" class="form-control" disabled/>
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cargo" class="control-label"></label>
+                    <input type="text" asp-for="Cargo" class="form-control" disabled/>
+                    <span asp-validation-for="Cargo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Fecha" class="control-label"></label>
+                    <input type="date"  asp-for="Fecha" class="form-control" disabled/>
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <input type="text" asp-for="Estado" class="form-control" disabled/>
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Eliminar Empleado" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+
+        @{ <partial name="_ValidationScriptsPartial" />}
+}
+
+

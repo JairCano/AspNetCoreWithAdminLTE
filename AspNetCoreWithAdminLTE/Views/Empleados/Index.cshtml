@@ -1,0 +1,99 @@
+﻿@model IEnumerable<AspNetCoreWithAdminLTE.Models.Empleados>
+    <style>
+
+        .BotonR {
+            width: 200px;
+            color: white;
+            background-color: #1ea0e8;
+            margin-left: 10px;
+        }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+        .encabezado {
+            color: #246E97;
+        }
+    </style>
+
+    @{
+        ViewData["Title"] = "Lista De Empleados";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        //TODO: 8. Creamos La vista
+    }
+
+    <div class="container">
+
+        
+        @if (TempData["mensaje"] != null)
+        {
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @TempData["mensaje"]
+            </div>
+        }
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Lista De Empleados</h3>
+            </div>
+        </div>
+
+        <div style="margin-left: 800px" class="row">
+            <div class="col-sm-6">
+                <a asp-controller="Empleados" asp-action="Create" class="BotonR btn d-block">Agregar Empleado</a>
+            </div>
+        </div>
+
+        <div class="row">
+            @if (Model.Count() > 0)
+            {
+                <table class="table table-bordered table-striped" id="tabla">
+                    <thead>
+                        <tr class="encabezado">
+                            <td>@Html.DisplayNameFor(m => m.id)</td>
+                            <td>@Html.DisplayNameFor(m => m.Documento)</td>
+                            <td>@Html.DisplayNameFor(m => m.Nombre)</td>
+                            <td>@Html.DisplayNameFor(m => m.Apellido)</td>
+                            <td>@Html.DisplayNameFor(m => m.Edad)</td>
+                            <td>@Html.DisplayNameFor(m => m.Email)</td>
+                            <td>@Html.DisplayNameFor(m => m.Telefono)</td>
+                            <td>@Html.DisplayNameFor(m => m.Cargo)</td>
+                            <td>@Html.DisplayNameFor(m => m.Fecha)</td>
+                            <td>@Html.DisplayNameFor(m => m.Estado)</td>
+                            <td>Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.id</td>
+                                <td>@item.Documento</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Apellido</td>
+                                <td>@item.Edad</td>
+                                <td>@item.Email</td>
+                                <td>@item.Telefono</td>
+                                <td>@item.Cargo</td>
+                                <td>@item.Fecha</td>
+                                <td>@item.Estado</td>
+                                <td>
+                                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="@item.id"><i class="fas fa-edit"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No Hay Registros De Empleados </p>
+            }
+        </div>
+
+    </div>
+    @section Scripts{
+        <script src="~/js/tabla.js"></script>
+    }

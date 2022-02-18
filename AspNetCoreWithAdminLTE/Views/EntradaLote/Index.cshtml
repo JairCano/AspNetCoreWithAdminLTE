@@ -1,0 +1,554 @@
+﻿<style>
+
+    .campo {
+        width: 350px;
+    }
+
+    .campofecha {
+        width: 870px;
+    }
+
+    .campoobservaciones {
+        width: 870px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .margin2 {
+        margin-left: 50px;
+    }
+
+    .margins{
+        margin-left: 10px;
+    }
+
+    .campof {
+        width: 328px;
+    }
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+
+    .margin-botones{
+        margin-left: 150px;
+    }
+
+    .margin-botones2 {
+        margin-left: 330px;
+    }
+</style>
+
+<div class="margins container">
+    <div class="panel-primary">
+        <h1>Control de Lote</h1>
+        <br />
+        <div class="telas panel-heading">
+            <div class="margin2">
+                <br /><br />
+                <h2>Telas</h2>
+                <br />
+                <br />
+                <div class="panel-body">
+                    <form id="form" class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Cantidad</label>
+
+                                <div class="col-md-8">
+                                    <input class="form-control" name="text_nom1" id="text_nom1" required />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Empresa de Empaque</label>
+
+                                <div class="col-md-7 col-lg-8">
+                                    <input class="form-control" name="text_nom2" id="text_nom2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-4 control-label">Empresa de Revision</label>
+
+                                <div class="col-md-8">
+                                    <input class="form-control" name="text_ape1" id="text_ape1">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Estado</label>
+
+                                <div class="col-md-7 col-lg-8">
+                                    <input class="form-control" name="text_ape2" id="text_ape2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="date" class="campofecha form-control" />
+                                <span class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Observaciones</label>
+
+                                <div class="col-md-7 col-lg-8">
+                                    <textarea type="text" class="campoobservaciones form-control" id="ejemplo_password_3" name="text_dep" id="text_dep"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-4 control-label">Referencia</label>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-3 col-md-4 col-lg-4">
+                                            <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Tejido</label>
+
+                                <div class="col-md-7 col-lg-8">
+                                    <input class="form-control" id="ejemplo_password_3" name="text_dep" id="text_dep">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Tipo de Prenda</label>
+                                <select class="campo form-control" name="Tipo de prenda">
+                                    <option>Manga Larga</option>
+                                    <option>Manga Corta</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Color</label>
+
+                                <select class="campo form-control" name="Color">
+                                    <option>Blanco</option>
+                                    <option>Negro</option>
+                                    <option>Cafe</option>
+                                    <option>Azul</option>
+                                    <option>Amarillo</option>
+                                    <option>Morado</option>
+                                    <option>Gris</option>
+                                    <option>Rojo</option>
+                                    <option>Turquesa</option>
+                                    <option>Beige</option>
+                                    <option>Verde</option>
+                                    <option>Naranja</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Proveedor</label>
+                                <select class="campo form-control" name="Proveedor">
+                                    <option>Americanino</option>
+                                    <option>Hilandia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br /><br />
+                        
+
+                        <div class="margin-botones">
+                            <div class="row">
+                                <div class="form-group col-md-3 text-center">
+                                    <div class="btn-group" data-toggle="buttons">
+
+                                        <a class="btn btn-outline-primary">Registrar Tela</a>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3 text-center">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        
+                                            <a asp-controller="ColorTelas" asp-action="Index" class=" btn btn-primary">ir a Registrar Colores</a>
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3 text-center">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        
+                                            <a asp-controller="Proveedores" asp-action="Index"  class=" btn btn-primary">Registrar Proveedores</a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br /><br />
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+    <h3>Tabla Telas</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Cantidad</td>
+                <td>Empresa Empaque</td>
+                <td>Empresa Revision </td>
+                <td>Estado</td>
+                <td>Fecha L</td>
+                <td>Observaciones</td>
+                <td>Referencia</td>
+                <td>Tejido</td>
+                <td>Proveedor</td>
+                <td>Color</td>
+                <td>Tipo Prenda</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20</td>
+                <td>Yo que se</td>
+                <td>De que me vio cara</td>
+                <td>Activo</td>
+                <td>12/01/2021</td>
+                <td>Todo bien todo correcto </td>
+                <td>3456543</td>
+                <td>Algodon</td>
+                <td>Americanino</td>
+                <td>Rojo</td>
+                <td>Manga Corta</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>30</td>
+                <td>YO que se</td>
+                <td>DE que me vio cara</td>
+                <td>Desactivado</td>
+                <td>12/01/2020</td>
+                <td>Todo mal todo incorrecto </td>
+                <td>345345</td>
+                <td>Poliester</td>
+                <td>Americanino</td>
+                <td>Verde</td>
+                <td>Manga Largas</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <br />
+    <hr />
+    <br />
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Insumos</h2>
+            <br />
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Bolsas</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Cantidad</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <input class="form-control" name="text_nom2" id="text_nom2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label">Numero Neces</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_ape1" id="text_ape1">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Fecha de LLegada</label>
+
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="date" class="campof form-control" />
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Proveedor</label>
+                            <select class="campo form-control" name="Proveedor">
+                                <option>Americanino</option>
+                                <option>Hilandia</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Tipo Insumo</label>
+                            <select class="campo form-control" name="Tipo Insumo">
+                                <option>Botón</option>
+                                <option>Etiquetas</option>
+                                <option>Marquillas</option>
+                                <option>Cierres</option>
+                                <option>Stickers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br /><br />
+
+                    <div class="margin-botones2">
+                        <div class="row">
+                            <div class="row">
+                                <div class="form-group col-md-2 text-center">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <a class=" btn btn-outline-primary">Registrar Insumo</a>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-3 text-center">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <a asp-controller="TiposInsumo" asp-action="Index" style="color:white" class=" btn btn-primary">ir a Registrar tipo Insumo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <br /><br />
+                       
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <h3>Tabla Insumos</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Bolsas</td>
+                <td>Cantidad</td>
+                <td>Numero Neces</td>
+                <td>Fecha L</td>
+                <td>Tipo Insumo</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20</td>
+                <td>5</td>
+                <td>20</td>
+                <td>12/02/2021</td>
+                <td>Boton</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10</td>
+                <td>10</td>
+                <td>5</td>
+                <td>12/02/2021</td>
+                <td>Marquillas</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Hilos</h2>
+            <br />
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Cantidad</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Medida</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <input class="campo form-control" id="ejemplo_password_3" name="text_ciu" id="text_ciu">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label">Fecha llegada</label>
+                            <input type="date" class="campofecha form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Descripcion</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <textarea type="text" class="campoobservaciones form-control" id="ejemplo_password_3" name="text_dep" id="text_dep"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Proveedor</label>
+                            <select class="campo form-control" name="Proveedor">
+                                <option>Americanino</option>
+                                <option>Hilandia</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Color</label>
+
+                            <select class="campo form-control" name="Color">
+                                <option>Blanco</option>
+                                <option>Negro</option>
+                                <option>Cafe</option>
+                                <option>Azul</option>
+                                <option>Amarillo</option>
+                                <option>Morado</option>
+                                <option>Gris</option>
+                                <option>Rojo</option>
+                                <option>Turquesa</option>
+                                <option>Beige</option>
+                                <option>Verde</option>
+                                <option>Naranja</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br /><br />
+
+                    <div class="margin-botones">
+                        <div class="row">
+                            <div class="form-group col-md-3 text-center">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <button type="button" id="btn_enviar" class="btn btn-outline-primary">Registrar Hilos</button>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3 text-center">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <a asp-controller="ColorHilos" asp-action="Index"  class=" btn btn-primary">Registrar Color</a>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3 text-center">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <a asp-controller="Proveedorhilos" asp-action="Index"  class=" btn btn-primary">Registrar Proveedores</a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                       
+                        <br /><br />
+</form>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <h3>Tabla Hilos</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Cantidad</td>
+                <td>Descripcion</td>
+                <td>Fecha L</td>
+                <td>Medida</td>
+                <td>Color</td>
+                <td>Proveedor</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20</td>
+                <td>No se</td>
+                <td>12/03/2021</td>
+                <td>12m</td>
+                <td>Negro</td>
+                <td>Hilandia</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>10</td>
+                <td>No se</td>
+                <td>12/03/2021</td>
+                <td>6m</td>
+                <td>Blanco</td>
+                <td>Hilandia</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

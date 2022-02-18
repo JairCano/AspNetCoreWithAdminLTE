@@ -1,0 +1,203 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .campo {
+        width: 350px;
+    }
+
+    .campofecha {
+        width: 870px;
+    }
+
+    .campoobservaciones {
+        width: 420px;
+        height: 50px;
+    }
+
+    .telas {
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .margin2 {
+        margin-left: 50px;
+    }
+
+    .margins {
+        margin-left: 10px;
+    }
+
+    .campof {
+        width: 328px;
+    }
+
+    .BotonR {
+        width: 200px;
+        color: white;
+        background-color: #1ea0e8;
+        margin-left: 10px;
+    }
+
+        .BotonR:hover {
+            background-color: #246E97;
+            color: white;
+        }
+
+    .encabezado {
+        color: #246E97;
+    }
+
+    .colort {
+        background-color: white;
+    }
+
+    .margin-botones {
+        margin-left: 150px;
+    }
+
+    .margin-botones2 {
+        margin-left: 330px;
+    }
+</style>
+
+<div class="margins container">
+    <div class="telas panel-heading">
+        <div class="margin2">
+            <br /><br />
+            <h2>Remisiones de lote</h2>
+            <br />
+            <br />
+            <div class="panel-body">
+                <form id="form" class="form-horizontal" role="form">
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label" name="nombre">Cantidad</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_nom1" id="text_nom1" required />
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Dirección</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <input class="form-control" name="text_nom2" id="text_nom2">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-4 control-label">Encargado</label>
+
+                            <div class="col-md-8">
+                                <input class="form-control" name="text_ape1" id="text_ape1">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Fecha L</label>
+
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input type="date" class="campof form-control" />
+                                <span class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Fecha S</label>
+                            <select class="campo form-control" name="Proveedor">
+                                <option>Americanino</option>
+                                <option>Hilandia</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Observaciones</label>
+
+                            <div class="col-md-7 col-lg-8">
+                                <textarea type="text" class="campoobservaciones form-control" id="ejemplo_password_3" name="text_dep" id="text_dep"> </textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ejemplo_email_3" class="col-md-5 col-lg-4 control-label">Tipo de remisión</label>
+                                <select class="campo form-control" name="Tipo de prenda">
+                                    <option>Remisión de Lavado</option>
+                                    <option>Remisión de Bodega</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-sm-offset-5 col-sm-2 text-center">
+                            <div class="btn-group" data-toggle="buttons">
+                                <button type="button" id="btn_enviar" class="BotonR btn">Registrar Subfases</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br /><br />
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <h3>Tabla Remisiones</h3>
+    <br />
+    <table class=" colort table table-bordered table-striped" id="tabla">
+        <thead>
+            <tr class="encabezado">
+                <td>Id</td>
+                <td>Cantidad</td>
+                <td>Direccion</td>
+                <td>Encargado</td>
+                <td>Fecha L</td>
+                <td>Fecha S</td>
+                <td>Observaciones</td>
+                <td>Tipo de Remisión</td>
+                <td>Acciones</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>40</td>
+                <td>Cr 40 # 50-30</td>
+                <td>Daniel</td>
+                <td>12/01/2021</td>
+                <td>12/04/2021</td>
+                <td>Se mandaron 2 paquetes de camisas a lavanderia</td>
+                <td>Remisión de Lavado</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>180</td>
+                <td>Cll 10 # 70-91</td>
+                <td>Sofia</td>
+                <td>12/03/2021</td>
+                <td>12/04/2021</td>
+                <td>Se mandaron mandaron a bodega 180 camisas</td>
+                <td>Remisión de Bodega</td>
+                <td>
+                    <a asp-controller="Empleados" asp-action="Edit" asp-route-id="item.id"><i class="fas fa-edit"></i></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
